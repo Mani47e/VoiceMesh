@@ -7,8 +7,8 @@
 #define I2S_LRC   4
 #define I2S_DOUT  7
 
-const char* WIFI_SSID = "Mani";
-const char* WIFI_PASS = "eeeeeeee";
+const char* WIFI_SSID = "Pritam";
+const char* WIFI_PASS = "pritam10";
 const int   UDP_PORT  = 3000;
 
 WiFiUDP udp;

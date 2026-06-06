@@ -8,9 +8,9 @@
 #define I2S_SD      18
 #define SAMPLE_RATE 8000
 
-const char* WIFI_SSID   = "Mani";
-const char* WIFI_PASS   = "eeeeeeee";
-const char* RECEIVER_IP = "192.168.102.135";
+const char* WIFI_SSID   = "Pritam";
+const char* WIFI_PASS   = "pritam10";
+const char* RECEIVER_IP = "10.97.50.135";
 const int   UDP_PORT    = 3000;
 
 WiFiUDP udp;
