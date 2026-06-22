@@ -7,7 +7,7 @@
 const char* WIFI_SSID = "Pritam";
 const char* WIFI_PASS = "pritam10";
 const char* PEER_IP_A = "10.97.50.135";   // first device IP
-const char* PEER_IP_B = "10.97.50.200";   // second device IP
+const char* PEER_IP_B = "10.97.50.239";   // second device IP
 const int   UDP_PORT  = 3000;
 
 #define I2S_BCLK    5

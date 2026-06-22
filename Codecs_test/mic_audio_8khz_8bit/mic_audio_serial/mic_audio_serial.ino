@@ -1,9 +1,9 @@
 #include <Arduino.h>
 #include <driver/i2s.h>
 
-#define I2S_SCK  19
-#define I2S_WS   20
-#define I2S_SD   18
+#define I2S_SCK  5
+#define I2S_WS   4
+#define I2S_SD   6
 
 #define SAMPLE_RATE  8000
 
