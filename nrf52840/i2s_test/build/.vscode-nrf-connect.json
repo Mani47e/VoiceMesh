@@ -1,0 +1,17 @@
+{
+  "toolchainPath": "/opt/nordic/ncs/toolchains/0c0f19d91c",
+  "sdkPath": "/Users/mani/zephyrproject",
+  "board": "nrf52840dongle/nrf52840",
+  "boardDir": "/Users/mani/zephyrproject/zephyr/boards/nordic/nrf52840dongle",
+  "boardDirs": [
+    "/Users/mani/zephyrproject/zephyr/boards/nordic/nrf52840dongle"
+  ],
+  "optimizations": "none",
+  "cmakeArgs": [],
+  "confFiles": [],
+  "buildDirectory": "build",
+  "kconfigFragments": [],
+  "snippets": [],
+  "dtcOverlays": [],
+  "extraDtcOverlays": []
+}
