@@ -2,19 +2,26 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "driver/i2s_std.h"
+#include "codec2.h"
+#include <esp_timer.h>
 
 #define EXAMPLE_STD_BCLK_IO1       5     // I2S bit clock io number
 #define EXAMPLE_STD_WS_IO1         4      // I2S word select io number
 #define EXAMPLE_STD_DOUT_IO1       7    // I2S data out io number
 #define EXAMPLE_STD_DIN_IO1        6     // I2S data in io number
 
+#define SAMPLE_RATE               8000
 
-
-#define AUDIO_SAMPLES_PER_BLOCK 512
+#define AUDIO_SAMPLES_PER_BLOCK 160
 #define AUDIO_BLOCK_COUNT 4
 
 #define BUFF_SIZE          2048  // Audio_samples_per_block * sizeof(int16_t) * AUDIO_BLOCK_COUNT
 
+
+//codec2
+struct CODEC2* c2;
+int c2_samples_per_frame;
+int c2_bytes_per_frame;
 
 typedef struct {
     int16_t samples[AUDIO_SAMPLES_PER_BLOCK];  // 160 samples of 16-bit audio data
@@ -25,7 +32,6 @@ static audio_block_t pool[AUDIO_BLOCK_COUNT];  // Pool of audio blocks
 
 static QueueHandle_t filled_queue;
 static QueueHandle_t free_queue;
-
 
 static i2s_chan_handle_t                tx_chan;        // I2S tx channel handler
 static i2s_chan_handle_t                rx_chan;       // I2S rx channel handler
@@ -43,7 +49,7 @@ static void i2s_example_init_std_duplex(void)
      * These two helper macros is defined in 'i2s_std.h' which can only be used in STD mode.
      * They can help to specify the slot and clock configurations for initialization or re-configuring */
     i2s_std_config_t std_cfg = {
-        .clk_cfg  = I2S_STD_CLK_DEFAULT_CONFIG(16000),
+        .clk_cfg  = I2S_STD_CLK_DEFAULT_CONFIG(SAMPLE_RATE),
         .slot_cfg = I2S_STD_MSB_SLOT_DEFAULT_CONFIG(I2S_DATA_BIT_WIDTH_32BIT, I2S_SLOT_MODE_MONO),
         .gpio_cfg = {
             .mclk = I2S_GPIO_UNUSED,    // some codecs may require mclk signal, this example doesn't need it
@@ -61,9 +67,6 @@ static void i2s_example_init_std_duplex(void)
     /* Initialize the channels */
     ESP_ERROR_CHECK(i2s_channel_init_std_mode(tx_chan, &std_cfg));
     ESP_ERROR_CHECK(i2s_channel_init_std_mode(rx_chan, &std_cfg));
-
-
-
 }
 
 static void i2s_example_read_task(void *args)
@@ -71,29 +74,29 @@ static void i2s_example_read_task(void *args)
     // int32_t *r_buf = (int32_t *)calloc(1, EXAMPLE_BUFF_SIZE);
     // printf("Buffer allocated at %p\n", r_buf);
     // printf("Buffer size: %d bytes\n", EXAMPLE_BUFF_SIZE);
-    static int32_t mic_raw[AUDIO_SAMPLES_PER_BLOCK];
+    static int32_t mic_raw[AUDIO_SAMPLES_PER_BLOCK*2];
 
     size_t bytes_read = 0;
     audio_block_t *free_block;
 
     while (1) {
-        
+        int64_t now = esp_timer_get_time();
+        static int64_t prev = 0;
+
+        printf("frame dt = %lld us\n", now - prev);
+        prev = now;
         xQueueReceive(free_queue, &free_block, portMAX_DELAY);
         /* Read i2s data */
-        esp_err_t ret = i2s_channel_read(rx_chan,mic_raw, sizeof(mic_raw), &bytes_read, 2000);
+        esp_err_t ret = i2s_channel_read(rx_chan, mic_raw, sizeof(mic_raw), &bytes_read, 2000);
 
         int count = bytes_read / sizeof(int32_t);
-
         int j = 0;
 
-        for(int i=0;i<count;i+=2)
-        {
-            free_block->samples[j++] =
-                (int16_t)(mic_raw[i] >> 16);
+        for (int i = 0; i < count; i += 2) {
+            free_block->samples[j++] = (int16_t)(mic_raw[i] >> 16);
         }
 
         free_block->samples_count = j;
-
         xQueueSend(filled_queue, &free_block, portMAX_DELAY);
 
         if (ret == ESP_OK) {
@@ -105,32 +108,99 @@ static void i2s_example_read_task(void *args)
     vTaskDelete(NULL);
 }
 
-static void i2s_example_write_task(void *args)
+// static void i2s_example_write_task(void *args)
+// {
+//     static int32_t spk_raw[AUDIO_SAMPLES_PER_BLOCK];
+//     size_t written_bytes = 0;
+//     audio_block_t *filled_block;
+
+//     while (1) {
+//         xQueueReceive(filled_queue, &filled_block, portMAX_DELAY);
+
+//         // Expand int16_t back to int32_t for 32-bit I2S DMA
+//         for (int i = 0; i < filled_block->samples_count; i++) {
+//             spk_raw[i] = (int32_t)filled_block->samples[i] << 16;
+//         }
+
+//         /* Write i2s data */
+//         esp_err_t ret = i2s_channel_write(tx_chan, spk_raw, filled_block->samples_count * sizeof(int32_t), &written_bytes, 2000);
+        
+//         xQueueSend(free_queue, &filled_block, portMAX_DELAY);
+        
+//         if (ret == ESP_OK) {
+//             printf("Write Task: i2s write %d bytes\n", written_bytes);
+//         } else {
+//             printf("Write Task: i2s write failed\n");
+//         }
+//     }    
+//     vTaskDelete(NULL);
+// }
+
+static void encode_task(void *args)
 {
+    audio_block_t *filled_block;
+    uint8_t encoded_bytes[8]; // Adjust size based on codec2 mode
+
     static int32_t spk_raw[AUDIO_SAMPLES_PER_BLOCK];
     size_t written_bytes = 0;
-    audio_block_t *filled_block;
+
 
     while (1) {
         xQueueReceive(filled_queue, &filled_block, portMAX_DELAY);
 
-         // Expand int16_t back to int32_t for 32-bit I2S DMA
-        for (int i = 0; i < filled_block->samples_count; i++) {
+        printf("samples_count=%d\n",
+       (int)filled_block->samples_count);
+
+       int64_t t1 = esp_timer_get_time();
+
+
+        // Encode the audio samples using codec2
+        codec2_encode(c2, encoded_bytes, filled_block->samples);
+
+        int64_t t2 = esp_timer_get_time();
+
+        codec2_decode(c2, filled_block->samples, encoded_bytes); // For testing: decode back to verify
+
+        int64_t t3 = esp_timer_get_time();
+
+        printf("encode=%lld us\n", t2 - t1);
+        printf("decode=%lld us\n",t3-t2);
+        
+         for (int i = 0; i < filled_block->samples_count; i++) {
             spk_raw[i] = (int32_t)filled_block->samples[i] << 16;
         }
 
         /* Write i2s data */
         esp_err_t ret = i2s_channel_write(tx_chan, spk_raw, filled_block->samples_count * sizeof(int32_t), &written_bytes, 2000);
         
+
         xQueueSend(free_queue, &filled_block, portMAX_DELAY);
-        
+
         if (ret == ESP_OK) {
             printf("Write Task: i2s write %d bytes\n", written_bytes);
         } else {
             printf("Write Task: i2s write failed\n");
         }
-    }    
+        vTaskDelay(1);
+    }
     vTaskDelete(NULL);
+}
+static void codec_task(void *arg)
+{
+    c2 = codec2_create(CODEC2_MODE_3200);
+
+    printf("codec ptr=%p\n", c2);
+
+    printf("samples=%d\n",
+           codec2_samples_per_frame(c2));
+
+    printf("bytes=%d\n",
+           codec2_bytes_per_frame(c2));
+
+    while(1)
+    {
+        vTaskDelay(1);
+    }
 }
 
 void app_main(void)
@@ -138,11 +208,21 @@ void app_main(void)
     vTaskDelay(pdMS_TO_TICKS(1000));
     printf("APP START\n");
 
+    // //Codec2 initialization
+    // c2 = codec2_create(CODEC2_MODE_3200);
+  
+
+    // c2_samples_per_frame = codec2_samples_per_frame(c2);
+    // c2_bytes_per_frame = codec2_bytes_per_frame(c2);
+    // printf("samples=%d bytes=%d\n",
+    //    c2_samples_per_frame,
+    //    c2_bytes_per_frame);
+
     //Initialising the queues for the audio blocks
     filled_queue = xQueueCreate(AUDIO_BLOCK_COUNT, sizeof(audio_block_t *));
     free_queue = xQueueCreate(AUDIO_BLOCK_COUNT, sizeof(audio_block_t *));
 
-    for(int i = 0; i < AUDIO_BLOCK_COUNT; i++){
+    for (int i = 0; i < AUDIO_BLOCK_COUNT; i++) {
         audio_block_t *free_block = &pool[i];
         xQueueSend(free_queue, &free_block, portMAX_DELAY);
     }
@@ -156,11 +236,20 @@ void app_main(void)
     printf("TX channel enabled\n");
    
 
-    xTaskCreate(i2s_example_read_task, "i2s_example_read_task", 4096+2048, NULL, 5, NULL);
-    xTaskCreate(i2s_example_write_task, "i2s_example_write_task", 4096, NULL, 5, NULL);
+    xTaskCreate(
+    codec_task,
+    "codec_task",
+    16384,
+    NULL,
+    5,
+    NULL
+    );
+    xTaskCreate(i2s_example_read_task, "i2s_example_read_task", 4096 + 2048, NULL, 5, NULL);
 
+    // xTaskCreate(i2s_example_write_task, "i2s_example_write_task", 4096, NULL, 5, NULL);
+
+    xTaskCreate(encode_task, "encode_task", 8192+16384, NULL, 5, NULL);
 
     vTaskDelay(pdMS_TO_TICKS(1000));
     printf("APP END\n");
-
 }
