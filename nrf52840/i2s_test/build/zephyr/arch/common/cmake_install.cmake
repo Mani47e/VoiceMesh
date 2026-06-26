@@ -40,6 +40,6 @@ endif()
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/Users/mani/Documents/nrfConnect/i2s_test/build/zephyr/arch/common/install_local_manifest.txt"
+  file(WRITE "/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/zephyr/arch/common/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

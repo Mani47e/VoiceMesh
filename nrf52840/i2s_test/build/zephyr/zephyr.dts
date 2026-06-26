@@ -186,7 +186,7 @@
 			pinctrl-1 = < &uart0_sleep >;    /* in zephyr/boards/nordic/nrf52840dongle/nrf52840dongle_nrf52840_common.dtsi:131 */
 			pinctrl-names = "default",
 			                "sleep";         /* in zephyr/boards/nordic/nrf52840dongle/nrf52840dongle_nrf52840_common.dtsi:132 */
-			status = "disabled";             /* in ../Documents/nrfConnect/i2s_test/boards/nrf52840dongle_nrf52840.overlay:21 */
+			status = "disabled";             /* in ../Documents/GitHub/VoiceMesh/nrf52840/i2s_test/boards/nrf52840dongle_nrf52840.overlay:21 */
 		};
 
 		/* node '/soc/i2c@40003000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:146 */
@@ -250,7 +250,7 @@
 			pinctrl-1 = < &spi1_sleep >;    /* in zephyr/boards/nordic/nrf52840dongle/nrf52840dongle_nrf52840_common.dtsi:176 */
 			pinctrl-names = "default",
 			                "sleep";        /* in zephyr/boards/nordic/nrf52840dongle/nrf52840dongle_nrf52840_common.dtsi:177 */
-			status = "disabled";            /* in ../Documents/nrfConnect/i2s_test/boards/nrf52840dongle_nrf52840.overlay:25 */
+			status = "disabled";            /* in ../Documents/GitHub/VoiceMesh/nrf52840/i2s_test/boards/nrf52840dongle_nrf52840.overlay:25 */
 		};
 
 		/* node '/soc/nfct@40005000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:218 */
@@ -618,9 +618,9 @@
 			#size-cells = < 0x0 >;         /* in zephyr/dts/arm/nordic/nrf52840.dtsi:508 */
 			reg = < 0x40025000 0x1000 >;   /* in zephyr/dts/arm/nordic/nrf52840.dtsi:509 */
 			interrupts = < 0x25 0x1 >;     /* in zephyr/dts/arm/nordic/nrf52840.dtsi:510 */
-			status = "okay";               /* in ../Documents/nrfConnect/i2s_test/boards/nrf52840dongle_nrf52840.overlay:14 */
-			pinctrl-0 = < &i2s0_default >; /* in ../Documents/nrfConnect/i2s_test/boards/nrf52840dongle_nrf52840.overlay:15 */
-			pinctrl-names = "default";     /* in ../Documents/nrfConnect/i2s_test/boards/nrf52840dongle_nrf52840.overlay:16 */
+			status = "okay";               /* in ../Documents/GitHub/VoiceMesh/nrf52840/i2s_test/boards/nrf52840dongle_nrf52840.overlay:14 */
+			pinctrl-0 = < &i2s0_default >; /* in ../Documents/GitHub/VoiceMesh/nrf52840/i2s_test/boards/nrf52840dongle_nrf52840.overlay:15 */
+			pinctrl-names = "default";     /* in ../Documents/GitHub/VoiceMesh/nrf52840/i2s_test/boards/nrf52840dongle_nrf52840.overlay:16 */
 		};
 
 		/* node '/soc/usbd@40027000' defined in zephyr/dts/arm/nordic/nrf52840.dtsi:514 */
@@ -886,16 +886,16 @@
 			};
 		};
 
-		/* node '/pin-controller/i2s0_default' defined in ../Documents/nrfConnect/i2s_test/boards/nrf52840dongle_nrf52840.overlay:2 */
+		/* node '/pin-controller/i2s0_default' defined in ../Documents/GitHub/VoiceMesh/nrf52840/i2s_test/boards/nrf52840dongle_nrf52840.overlay:2 */
 		i2s0_default: i2s0_default {
-			phandle = < 0xe >; /* in ../Documents/nrfConnect/i2s_test/boards/nrf52840dongle_nrf52840.overlay:15 */
+			phandle = < 0xe >; /* in ../Documents/GitHub/VoiceMesh/nrf52840/i2s_test/boards/nrf52840dongle_nrf52840.overlay:15 */
 
-			/* node '/pin-controller/i2s0_default/group1' defined in ../Documents/nrfConnect/i2s_test/boards/nrf52840dongle_nrf52840.overlay:3 */
+			/* node '/pin-controller/i2s0_default/group1' defined in ../Documents/GitHub/VoiceMesh/nrf52840/i2s_test/boards/nrf52840dongle_nrf52840.overlay:3 */
 			group1 {
 				psels = < 0xd000002 >,
 				        < 0xf00001d >,
 				        < 0x1100001f >,
-				        < 0x12000011 >; /* in ../Documents/nrfConnect/i2s_test/boards/nrf52840dongle_nrf52840.overlay:4 */
+				        < 0x12000011 >; /* in ../Documents/GitHub/VoiceMesh/nrf52840/i2s_test/boards/nrf52840dongle_nrf52840.overlay:4 */
 			};
 		};
 	};

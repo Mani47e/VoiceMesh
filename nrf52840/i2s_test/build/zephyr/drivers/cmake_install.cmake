@@ -39,77 +39,77 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/mani/Documents/nrfConnect/i2s_test/build/zephyr/drivers/firmware/cmake_install.cmake")
+  include("/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/zephyr/drivers/firmware/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/mani/Documents/nrfConnect/i2s_test/build/zephyr/drivers/interrupt_controller/cmake_install.cmake")
+  include("/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/zephyr/drivers/interrupt_controller/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/mani/Documents/nrfConnect/i2s_test/build/zephyr/drivers/misc/cmake_install.cmake")
+  include("/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/zephyr/drivers/misc/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/mani/Documents/nrfConnect/i2s_test/build/zephyr/drivers/pcie/cmake_install.cmake")
+  include("/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/zephyr/drivers/pcie/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/mani/Documents/nrfConnect/i2s_test/build/zephyr/drivers/usb/cmake_install.cmake")
+  include("/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/zephyr/drivers/usb/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/mani/Documents/nrfConnect/i2s_test/build/zephyr/drivers/usb_c/cmake_install.cmake")
+  include("/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/zephyr/drivers/usb_c/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/mani/Documents/nrfConnect/i2s_test/build/zephyr/drivers/clock_control/cmake_install.cmake")
+  include("/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/zephyr/drivers/clock_control/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/mani/Documents/nrfConnect/i2s_test/build/zephyr/drivers/console/cmake_install.cmake")
+  include("/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/zephyr/drivers/console/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/mani/Documents/nrfConnect/i2s_test/build/zephyr/drivers/gpio/cmake_install.cmake")
+  include("/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/zephyr/drivers/gpio/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/mani/Documents/nrfConnect/i2s_test/build/zephyr/drivers/hwinfo/cmake_install.cmake")
+  include("/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/zephyr/drivers/hwinfo/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/mani/Documents/nrfConnect/i2s_test/build/zephyr/drivers/i2s/cmake_install.cmake")
+  include("/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/zephyr/drivers/i2s/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/mani/Documents/nrfConnect/i2s_test/build/zephyr/drivers/pinctrl/cmake_install.cmake")
+  include("/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/zephyr/drivers/pinctrl/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/mani/Documents/nrfConnect/i2s_test/build/zephyr/drivers/serial/cmake_install.cmake")
+  include("/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/zephyr/drivers/serial/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/mani/Documents/nrfConnect/i2s_test/build/zephyr/drivers/timer/cmake_install.cmake")
+  include("/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/zephyr/drivers/timer/cmake_install.cmake")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/Users/mani/Documents/nrfConnect/i2s_test/build/zephyr/drivers/install_local_manifest.txt"
+  file(WRITE "/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/zephyr/drivers/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

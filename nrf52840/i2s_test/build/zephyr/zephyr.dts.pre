@@ -1127,7 +1127,7 @@ zephyr_udc0: &usbd {
  };
 };
 # 0 "<command-line>" 2
-# 1 "/Users/mani/Documents/nrfConnect/i2s_test/boards/nrf52840dongle_nrf52840.overlay" 1
+# 1 "/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/boards/nrf52840dongle_nrf52840.overlay" 1
 &pinctrl {
  i2s0_default: i2s0_default {
   group1 {

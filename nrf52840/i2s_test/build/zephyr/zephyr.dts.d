@@ -29,4 +29,4 @@ empty_file.o: /Users/mani/zephyrproject/zephyr/misc/empty_file.c \
  /Users/mani/zephyrproject/zephyr/include/zephyr/dt-bindings/regulator/nrf5x.h \
  /Users/mani/zephyrproject/zephyr/boards/nordic/nrf52840dongle/nrf52840dongle_nrf52840-pinctrl.dtsi \
  /Users/mani/zephyrproject/zephyr/boards/common/usb/cdc_acm_serial.dtsi \
- /Users/mani/Documents/nrfConnect/i2s_test/boards/nrf52840dongle_nrf52840.overlay
+ /Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/boards/nrf52840dongle_nrf52840.overlay

@@ -1,7 +1,7 @@
 cmake:
   application:
-    configuration-dir: '/Users/mani/Documents/nrfConnect/i2s_test'
-    source-dir: '/Users/mani/Documents/nrfConnect/i2s_test'
+    configuration-dir: '/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test'
+    source-dir: '/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test'
   board:
     name: 'nrf52840dongle'
     path:
@@ -13,7 +13,7 @@ cmake:
      - '/Users/mani/zephyrproject/zephyr/dts/bindings'
     files:
      - '/Users/mani/zephyrproject/zephyr/boards/nordic/nrf52840dongle/nrf52840dongle_nrf52840.dts'
-     - '/Users/mani/Documents/nrfConnect/i2s_test/boards/nrf52840dongle_nrf52840.overlay'
+     - '/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/boards/nrf52840dongle_nrf52840.overlay'
     include-dirs:
      - '/Users/mani/zephyrproject/modules/hal/ambiq/dts'
      - '/Users/mani/zephyrproject/modules/hal/atmel/include'
@@ -41,13 +41,13 @@ cmake:
      - '/Users/mani/zephyrproject/zephyr/dts/arc'
      - '/Users/mani/zephyrproject/zephyr/dts'
     user-files:
-     - '/Users/mani/Documents/nrfConnect/i2s_test/boards/nrf52840dongle_nrf52840.overlay'
+     - '/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/boards/nrf52840dongle_nrf52840.overlay'
   kconfig:
     files:
      - '/Users/mani/zephyrproject/zephyr/boards/nordic/nrf52840dongle/nrf52840dongle_nrf52840_defconfig'
-     - '/Users/mani/Documents/nrfConnect/i2s_test/prj.conf'
+     - '/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/prj.conf'
     user-files:
-     - '/Users/mani/Documents/nrfConnect/i2s_test/prj.conf'
+     - '/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/prj.conf'
   toolchain:
     name: 'zephyr'
     path: '/Users/mani/zephyr-sdk-1.0.1'
@@ -59,6 +59,6 @@ cmake:
     zephyr-base: '/Users/mani/zephyrproject/zephyr'
 version: '0.1.0'
 west:
-  command: '/opt/nordic/ncs/toolchains/0c0f19d91c/bin/west build --build-dir /Users/mani/Documents/nrfConnect/i2s_test/build /Users/mani/Documents/nrfConnect/i2s_test --pristine --board nrf52840dongle/nrf52840 -- -DNCS_TOOLCHAIN_VERSION=NONE -DDEBUG_THREAD_INFO=Off'
+  command: '/opt/nordic/ncs/toolchains/0c0f19d91c/bin/west build --build-dir /Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build /Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test --pristine --board nrf52840dongle/nrf52840 -- -DNCS_TOOLCHAIN_VERSION=NONE'
   topdir: '/Users/mani/zephyrproject'
   version: '1.5.0'

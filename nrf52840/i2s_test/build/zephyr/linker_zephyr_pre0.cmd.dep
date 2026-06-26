@@ -1,12 +1,12 @@
 linker_zephyr_pre0.cmd: \
  /Users/mani/zephyrproject/zephyr/include/zephyr/arch/arm/cortex_m/scripts/linker.ld \
- /Users/mani/Documents/nrfConnect/i2s_test/build/zephyr/include/generated/zephyr/autoconf.h \
+ /Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/zephyr/include/generated/zephyr/autoconf.h \
  /Users/mani/zephyrproject/zephyr/include/zephyr/linker/sections.h \
  /Users/mani/zephyrproject/zephyr/include/zephyr/linker/section_tags.h \
  /Users/mani/zephyrproject/zephyr/include/zephyr/toolchain.h \
  /Users/mani/zephyrproject/zephyr/include/zephyr/toolchain/gcc.h \
  /Users/mani/zephyrproject/zephyr/include/zephyr/devicetree.h \
- /Users/mani/Documents/nrfConnect/i2s_test/build/zephyr/include/generated/zephyr/devicetree_generated.h \
+ /Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/zephyr/include/generated/zephyr/devicetree_generated.h \
  /Users/mani/zephyrproject/zephyr/include/zephyr/irq_multilevel.h \
  /Users/mani/zephyrproject/zephyr/include/zephyr/sys/util.h \
  /Users/mani/zephyrproject/zephyr/include/zephyr/sys/util_macro.h \
@@ -41,7 +41,7 @@ linker_zephyr_pre0.cmd: \
  /Users/mani/zephyrproject/zephyr/include/zephyr/linker/devicetree_regions.h \
  /Users/mani/zephyrproject/zephyr/include/zephyr/linker/linker-defs.h \
  /Users/mani/zephyrproject/zephyr/include/zephyr/toolchain/common.h \
- /Users/mani/Documents/nrfConnect/i2s_test/build/zephyr/include/generated/zephyr/offsets.h \
+ /Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/zephyr/include/generated/zephyr/offsets.h \
  /Users/mani/zephyrproject/zephyr/include/zephyr/linker/linker-tool.h \
  /Users/mani/zephyrproject/zephyr/include/zephyr/linker/linker-tool-gcc.h \
  /Users/mani/zephyrproject/zephyr/include/zephyr/kernel/mm.h \
@@ -49,7 +49,7 @@ linker_zephyr_pre0.cmd: \
  /Users/mani/zephyrproject/zephyr/include/zephyr/linker/linker-devnull.h \
  /Users/mani/zephyrproject/zephyr/include/zephyr/linker/rel-sections.ld \
  /Users/mani/zephyrproject/zephyr/include/zephyr/linker/llext-sections.ld \
- /Users/mani/Documents/nrfConnect/i2s_test/build/zephyr/include/generated/snippets-rom-start.ld \
+ /Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/zephyr/include/generated/snippets-rom-start.ld \
  /Users/mani/zephyrproject/zephyr/include/../arch/common/rom_start_address.ld \
  /Users/mani/zephyrproject/zephyr/include/../arch/common/fill_with_zeros.ld \
  /Users/mani/zephyrproject/zephyr/include/../arch/common/rom_start_offset.ld \
@@ -61,7 +61,7 @@ linker_zephyr_pre0.cmd: \
  /Users/mani/zephyrproject/zephyr/include/zephyr/linker/common-rom/common-rom-kernel-devices.ld \
  /Users/mani/zephyrproject/zephyr/include/zephyr/linker/iterable_sections.h \
  /Users/mani/zephyrproject/zephyr/include/zephyr/linker/device-deps.ld \
- /Users/mani/Documents/nrfConnect/i2s_test/build/zephyr/include/generated/device-api-sections.ld \
+ /Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/zephyr/include/generated/device-api-sections.ld \
  /Users/mani/zephyrproject/zephyr/include/zephyr/linker/common-rom/common-rom-ztest.ld \
  /Users/mani/zephyrproject/zephyr/include/zephyr/linker/common-rom/common-rom-init.ld \
  /Users/mani/zephyrproject/zephyr/include/zephyr/linker/common-rom/common-rom-net.ld \
@@ -70,26 +70,26 @@ linker_zephyr_pre0.cmd: \
  /Users/mani/zephyrproject/zephyr/include/zephyr/linker/common-rom/common-rom-debug.ld \
  /Users/mani/zephyrproject/zephyr/include/zephyr/linker/common-rom/common-rom-interrupt-controllers.ld \
  /Users/mani/zephyrproject/zephyr/include/zephyr/linker/common-rom/common-rom-misc.ld \
- /Users/mani/Documents/nrfConnect/i2s_test/build/zephyr/include/generated/snippets-rom-sections.ld \
+ /Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/zephyr/include/generated/snippets-rom-sections.ld \
  /Users/mani/zephyrproject/zephyr/include/zephyr/linker/thread-local-storage.ld \
- /Users/mani/Documents/nrfConnect/i2s_test/build/zephyr/include/generated/snippets-rodata.ld \
+ /Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/zephyr/include/generated/snippets-rodata.ld \
  /Users/mani/zephyrproject/zephyr/include/../arch/arm/core/swi_tables.ld \
  /Users/mani/zephyrproject/zephyr/include/zephyr/linker/kobject-rom.ld \
  /Users/mani/zephyrproject/zephyr/include/zephyr/linker/cplusplus-rom.ld \
- /Users/mani/Documents/nrfConnect/i2s_test/build/zephyr/include/generated/snippets-ram-sections.ld \
+ /Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/zephyr/include/generated/snippets-ram-sections.ld \
  /Users/mani/zephyrproject/zephyr/include/../arch/common/ramfunc.ld \
- /Users/mani/Documents/nrfConnect/i2s_test/build/zephyr/include/generated/snippets-ramfunc-section.ld \
- /Users/mani/Documents/nrfConnect/i2s_test/build/zephyr/include/generated/snippets-rwdata.ld \
+ /Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/zephyr/include/generated/snippets-ramfunc-section.ld \
+ /Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/zephyr/include/generated/snippets-rwdata.ld \
  /Users/mani/zephyrproject/zephyr/include/zephyr/linker/common-ram.ld \
  /Users/mani/zephyrproject/zephyr/include/zephyr/linker/kobject-data.ld \
  /Users/mani/zephyrproject/zephyr/include/zephyr/linker/cplusplus-ram.ld \
- /Users/mani/Documents/nrfConnect/i2s_test/build/zephyr/include/generated/snippets-data-sections.ld \
+ /Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/zephyr/include/generated/snippets-data-sections.ld \
  /Users/mani/zephyrproject/zephyr/include/../subsys/usb/device_next/usbd_data.ld \
- /Users/mani/Documents/nrfConnect/i2s_test/build/zephyr/include/generated/snippets-sections.ld \
+ /Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/zephyr/include/generated/snippets-sections.ld \
  /Users/mani/zephyrproject/zephyr/include/../soc/nordic/common/platform_init.ld \
  /Users/mani/zephyrproject/zephyr/include/zephyr/linker/intlist.ld \
  /Users/mani/zephyrproject/zephyr/include/zephyr/linker/debug-sections.ld \
  /Users/mani/zephyrproject/zephyr/include/zephyr/linker/common-noinit.ld \
- /Users/mani/Documents/nrfConnect/i2s_test/build/zephyr/include/generated/snippets-noinit.ld \
+ /Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/zephyr/include/generated/snippets-noinit.ld \
  /Users/mani/zephyrproject/zephyr/include/zephyr/linker/kobject-priv-stacks.ld \
  /Users/mani/zephyrproject/zephyr/include/zephyr/linker/ram-end.ld
