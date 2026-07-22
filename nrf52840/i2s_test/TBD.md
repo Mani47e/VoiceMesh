@@ -40,6 +40,6 @@ why triggering tx and rx both instead of speratly trigger?
 
 
 
-* * ANS:
+* * A:
         TX is configured as bit-clock and frame-clock controller (master), but RX is left as 0 (target/slave for both clocks). On most SoCs the I2S peripheral shares one clock generator between RX and TX — you don't get two independent clock domains — so this mismatch is likely to cause RX to never see valid clocks, or the driver to reject/ignore one of the configs. Unless your specific SoC's I2S driver genuinely supports asymmetric master/slave role per direction (rare), RX should mirror TX:
     
