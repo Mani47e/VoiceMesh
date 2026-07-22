@@ -5,6 +5,8 @@
 #include <zephyr/sys/printk.h>
 #include<string.h>
 
+#include "ulaw.h"
+
 //Macros for audio configuration
 #define SAMPLE_RATE 8000
 #define AUDIO_WORD_SIZE 24
@@ -12,6 +14,8 @@
 #define AUDIO_BLOCK_COUNT 4
 #define AUDIO_SAMPLES_PER_BLOCK 512
 #define AUDIO_BLOCK_SIZE ( sizeof(int32_t) * AUDIO_SAMPLES_PER_BLOCK)
+
+#define AUDIO_GAIN 1  // Gain factor for audio amplification
 
 
 //Device and configuration structures
@@ -76,7 +80,7 @@ static void configure_i2s_rxntx(){
         rx_cfg.word_size = AUDIO_WORD_SIZE;
         rx_cfg.channels = 1;
         rx_cfg.format = I2S_FMT_DATA_FORMAT_I2S;     //?
-        rx_cfg.options = 0;
+        rx_cfg.options = I2S_OPT_BIT_CLK_CONTROLLER | I2S_OPT_FRAME_CLK_CONTROLLER;       //?;
         rx_cfg.frame_clk_freq = SAMPLE_RATE;
         rx_cfg.mem_slab = &rx_mem_slab;
         rx_cfg.block_size = AUDIO_BLOCK_SIZE;
@@ -107,6 +111,22 @@ static void preload_tx(void){
     }
 }
 
+static void ulaw_loopback(void *buf){
+    uint8_t ulaw_buf[AUDIO_SAMPLES_PER_BLOCK];
+    int32_t *samples = (int32_t *)buf;
+
+        for (int i = 0; i < AUDIO_SAMPLES_PER_BLOCK; i++){
+            int16_t pcm = (int16_t)(samples[i] >> 16);
+            ulaw_buf[i] = ulaw_encode(pcm);
+        }
+
+        for (int i = 0; i < AUDIO_SAMPLES_PER_BLOCK; i++){
+            int16_t pcm = ulaw_decode(ulaw_buf[i]);
+            samples[i] = ((int32_t)pcm) << 16;
+        }
+
+}
+
 
 static void i2s_read_task(void *p1,void *p2,void *p3){
 
@@ -128,13 +148,15 @@ static void i2s_read_task(void *p1,void *p2,void *p3){
             }
 
             //Prnting Samples from the DMA buffer received from the I2S driver
-            int32_t *samples = (int32_t *)read_buf;
-            int count = read_size / sizeof(int32_t);
-            printk("Count : %d\n",count);
+            // int32_t *samples = (int32_t *)read_buf;
+            // int count = read_size / sizeof(int32_t);
+            // printk("Count : %d\n",count);
 
-            for (int i = 0; i < 20; i+=2) {
-                    printk("%d\n",samples[i]);
-            }                                               //?
+            // for (int i = 0; i < 20; i+=2) {
+            //         printk("%d\n",samples[i]);
+            // }                                               //?
+
+            ulaw_loopback(read_buf);  // Apply u-law encoding and decoding to the samples
 
 
             //send the data into the msg queue
@@ -171,6 +193,16 @@ static void i2s_write_task(void *p1,void *p2,void *p3){
             memcpy(write_block, read_block, AUDIO_BLOCK_SIZE);
 
             k_mem_slab_free(&rx_mem_slab, read_block);  // free the RX buffer after copying to TX buffer
+
+        //Audio GAIN Control can be applied here to the samples in the write_block before sending to the I2S driver
+            int32_t *samples = (int32_t *)write_block;
+            for (int i = 0; i < AUDIO_SAMPLES_PER_BLOCK; i++) {
+                int64_t boosted = (int64_t)samples[i] * AUDIO_GAIN;
+                if (boosted > INT32_MAX) boosted = INT32_MAX;
+                if (boosted < INT32_MIN) boosted = INT32_MIN;
+                samples[i] = (int32_t)boosted;
+            }
+            
 
 
             int write_ret = i2s_write(i2s_dev,write_block,AUDIO_BLOCK_SIZE);
