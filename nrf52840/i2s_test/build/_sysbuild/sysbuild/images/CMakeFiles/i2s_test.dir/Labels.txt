@@ -1,0 +1,13 @@
+# Target labels
+ i2s_test
+# Source files and their labels
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/_sysbuild/sysbuild/images/CMakeFiles/i2s_test
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/_sysbuild/sysbuild/images/CMakeFiles/i2s_test.rule
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/_sysbuild/sysbuild/images/CMakeFiles/i2s_test-complete.rule
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/_sysbuild/sysbuild/images/i2s_test-prefix/src/i2s_test-stamp/i2s_test-build.rule
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/_sysbuild/sysbuild/images/i2s_test-prefix/src/i2s_test-stamp/i2s_test-configure.rule
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/_sysbuild/sysbuild/images/i2s_test-prefix/src/i2s_test-stamp/i2s_test-download.rule
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/_sysbuild/sysbuild/images/i2s_test-prefix/src/i2s_test-stamp/i2s_test-install.rule
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/_sysbuild/sysbuild/images/i2s_test-prefix/src/i2s_test-stamp/i2s_test-mkdir.rule
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/_sysbuild/sysbuild/images/i2s_test-prefix/src/i2s_test-stamp/i2s_test-patch.rule
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/_sysbuild/sysbuild/images/i2s_test-prefix/src/i2s_test-stamp/i2s_test-update.rule

@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/CMakeFiles/Rx"
+		},
+		{
+			"file" : "/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/CMakeFiles/Rx.rule"
+		},
+		{
+			"file" : "/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/CMakeFiles/Rx-complete.rule"
+		},
+		{
+			"file" : "/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-build.rule"
+		},
+		{
+			"file" : "/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-configure.rule"
+		},
+		{
+			"file" : "/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-download.rule"
+		},
+		{
+			"file" : "/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-install.rule"
+		},
+		{
+			"file" : "/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-mkdir.rule"
+		},
+		{
+			"file" : "/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-patch.rule"
+		},
+		{
+			"file" : "/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Rx"
+		],
+		"name" : "Rx"
+	}
+}

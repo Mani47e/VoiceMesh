@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build/_sysbuild/sysbuild/images/CMakeFiles/Display"
+		},
+		{
+			"file" : "/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build/_sysbuild/sysbuild/images/CMakeFiles/Display.rule"
+		},
+		{
+			"file" : "/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build/_sysbuild/sysbuild/images/CMakeFiles/Display-complete.rule"
+		},
+		{
+			"file" : "/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build/_sysbuild/sysbuild/images/Display-prefix/src/Display-stamp/Display-build.rule"
+		},
+		{
+			"file" : "/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build/_sysbuild/sysbuild/images/Display-prefix/src/Display-stamp/Display-configure.rule"
+		},
+		{
+			"file" : "/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build/_sysbuild/sysbuild/images/Display-prefix/src/Display-stamp/Display-download.rule"
+		},
+		{
+			"file" : "/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build/_sysbuild/sysbuild/images/Display-prefix/src/Display-stamp/Display-install.rule"
+		},
+		{
+			"file" : "/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build/_sysbuild/sysbuild/images/Display-prefix/src/Display-stamp/Display-mkdir.rule"
+		},
+		{
+			"file" : "/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build/_sysbuild/sysbuild/images/Display-prefix/src/Display-stamp/Display-patch.rule"
+		},
+		{
+			"file" : "/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build/_sysbuild/sysbuild/images/Display-prefix/src/Display-stamp/Display-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Display"
+		],
+		"name" : "Display"
+	}
+}

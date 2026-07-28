@@ -1,0 +1,27 @@
+# ninja log v7
+2	19	1785127773170049904	_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-mkdir	1dc5f5c9a5893a60
+2	19	1785127773170049904	/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-mkdir	1dc5f5c9a5893a60
+19	34	1785127773185269286	_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-download	d083077b359354e6
+19	34	1785127773185269286	/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-download	d083077b359354e6
+34	49	1785127773200569334	_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-update	b4c7d795a34c3aa6
+34	49	1785127773200569334	/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-update	b4c7d795a34c3aa6
+49	64	1785127773215752633	_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-patch	2000da0311e17f69
+49	64	1785127773215752633	/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-patch	2000da0311e17f69
+64	79	1785127773230730641	_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-configure	6c44d0fcb0898425
+64	79	1785127773230730641	/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-configure	6c44d0fcb0898425
+79	3066	1785127773231464223	_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-build	f6a6b0698bfe5b8e
+79	3066	1785127773231464223	/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-build	f6a6b0698bfe5b8e
+3066	3077	1785127776218555515	_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-install	deafd7fe3ef0cc08
+3066	3077	1785127776218555515	/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-install	deafd7fe3ef0cc08
+3077	3097	1785127776249052863	_sysbuild/sysbuild/images/CMakeFiles/Rx-complete	c48779a10582f815
+3077	3097	1785127776249052863	_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-done	c48779a10582f815
+3077	3097	1785127776249052863	/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/CMakeFiles/Rx-complete	c48779a10582f815
+3077	3097	1785127776249052863	/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-done	c48779a10582f815
+3	50	1785127789137781603	_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-build	f6a6b0698bfe5b8e
+3	50	1785127789137781603	/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-build	f6a6b0698bfe5b8e
+50	60	1785127789184330290	_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-install	deafd7fe3ef0cc08
+50	60	1785127789184330290	/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-install	deafd7fe3ef0cc08
+60	82	1785127789215412000	_sysbuild/sysbuild/images/CMakeFiles/Rx-complete	c48779a10582f815
+60	82	1785127789215412000	_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-done	c48779a10582f815
+60	82	1785127789215412000	/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/CMakeFiles/Rx-complete	c48779a10582f815
+60	82	1785127789215412000	/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-done	c48779a10582f815

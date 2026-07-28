@@ -1,0 +1,13 @@
+# Target labels
+ Rx
+# Source files and their labels
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/CMakeFiles/Rx
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/CMakeFiles/Rx.rule
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/CMakeFiles/Rx-complete.rule
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-build.rule
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-configure.rule
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-download.rule
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-install.rule
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-mkdir.rule
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-patch.rule
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/_sysbuild/sysbuild/images/Rx-prefix/src/Rx-stamp/Rx-update.rule

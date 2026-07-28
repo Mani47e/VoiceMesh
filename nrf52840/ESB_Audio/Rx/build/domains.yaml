@@ -1,0 +1,7 @@
+default: Rx
+build_dir: /Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build
+domains:
+  - name: Rx
+    build_dir: /Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Rx/build/Rx
+flash_order:
+  - Rx

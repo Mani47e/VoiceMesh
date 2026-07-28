@@ -1,4 +1,4 @@
-# Install script for directory: /Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test
+# Install script for directory: /opt/nordic/ncs/v3.4.0/zephyr/share/sysbuild
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -29,17 +29,12 @@ endif()
 
 # Is this installation the result of a crosscompile?
 if(NOT DEFINED CMAKE_CROSSCOMPILING)
-  set(CMAKE_CROSSCOMPILING "TRUE")
-endif()
-
-# Set path to fallback-tool for dependency-resolution.
-if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/Users/mani/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-objdump")
+  set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/zephyr/cmake_install.cmake")
+  include("/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/i2s_test/build/_sysbuild/cmake_install.cmake")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT

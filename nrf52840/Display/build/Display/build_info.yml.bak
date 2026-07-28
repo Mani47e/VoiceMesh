@@ -1,0 +1,57 @@
+cmake:
+  application:
+    configuration-dir: '/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display'
+    source-dir: '/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display'
+  board:
+    name: 'nrf52840dongle'
+    path:
+     - '/opt/nordic/ncs/v3.4.0/zephyr/boards/nordic/nrf52840dongle'
+    qualifiers: 'nrf52840'
+    revision: ''
+  devicetree:
+    bindings-dirs:
+     - '/opt/nordic/ncs/v3.4.0/nrf/dts/bindings'
+     - '/opt/nordic/ncs/v3.4.0/zephyr/dts/bindings'
+    files:
+     - '/opt/nordic/ncs/v3.4.0/zephyr/boards/nordic/nrf52840dongle/nrf52840dongle_nrf52840.dts'
+     - '/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/boards/nrf52840dongle_nrf52840.overlay'
+    include-dirs:
+     - '/opt/nordic/ncs/v3.4.0/nrf/include'
+     - '/opt/nordic/ncs/v3.4.0/nrf/dts/common'
+     - '/opt/nordic/ncs/v3.4.0/nrf/dts/riscv'
+     - '/opt/nordic/ncs/v3.4.0/nrf/dts/arm'
+     - '/opt/nordic/ncs/v3.4.0/nrf/dts'
+     - '/opt/nordic/ncs/v3.4.0/zephyr/include'
+     - '/opt/nordic/ncs/v3.4.0/zephyr/include/zephyr'
+     - '/opt/nordic/ncs/v3.4.0/zephyr/dts/common'
+     - '/opt/nordic/ncs/v3.4.0/zephyr/dts/vendor'
+     - '/opt/nordic/ncs/v3.4.0/zephyr/dts/rx'
+     - '/opt/nordic/ncs/v3.4.0/zephyr/dts/x86'
+     - '/opt/nordic/ncs/v3.4.0/zephyr/dts/xtensa'
+     - '/opt/nordic/ncs/v3.4.0/zephyr/dts/sparc'
+     - '/opt/nordic/ncs/v3.4.0/zephyr/dts/riscv'
+     - '/opt/nordic/ncs/v3.4.0/zephyr/dts/posix'
+     - '/opt/nordic/ncs/v3.4.0/zephyr/dts/arm64'
+     - '/opt/nordic/ncs/v3.4.0/zephyr/dts/arm'
+     - '/opt/nordic/ncs/v3.4.0/zephyr/dts/arc'
+     - '/opt/nordic/ncs/v3.4.0/zephyr/dts'
+    user-files:
+     - '/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/boards/nrf52840dongle_nrf52840.overlay'
+  kconfig:
+    files:
+     - '/opt/nordic/ncs/v3.4.0/zephyr/boards/nordic/nrf52840dongle/nrf52840dongle_nrf52840_defconfig'
+     - '/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/prj.conf'
+     - '/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build/Display/zephyr/misc/generated/extra_kconfig_options.conf'
+     - '/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build/Display/zephyr/.config.sysbuild'
+    user-files:
+     - '/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/prj.conf'
+  toolchain:
+    name: 'zephyr'
+    path: '/opt/nordic/ncs/toolchains/ccc010f809/opt/zephyr-sdk'
+  vendor-specific:
+    nordic:
+      svdfile: '/opt/nordic/ncs/v3.4.0/modules/hal/nordic/nrfx/bsp/stable/mdk/nrf52840.svd'
+  zephyr:
+    version: '4.4.0'
+    zephyr-base: '/opt/nordic/ncs/v3.4.0/zephyr'
+version: '0.1.0'

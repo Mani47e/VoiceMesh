@@ -1,0 +1,19 @@
+# ninja log v7
+2	18	1784979672558326992	_sysbuild/sysbuild/images/Display-prefix/src/Display-stamp/Display-mkdir	5bea7f47bef39425
+2	18	1784979672558326992	/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build/_sysbuild/sysbuild/images/Display-prefix/src/Display-stamp/Display-mkdir	5bea7f47bef39425
+18	31	1784979672572125050	_sysbuild/sysbuild/images/Display-prefix/src/Display-stamp/Display-download	8c1dd091ba12478c
+18	31	1784979672572125050	/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build/_sysbuild/sysbuild/images/Display-prefix/src/Display-stamp/Display-download	8c1dd091ba12478c
+31	46	1784979672586316354	_sysbuild/sysbuild/images/Display-prefix/src/Display-stamp/Display-update	95f521a5da57cb60
+31	46	1784979672586316354	/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build/_sysbuild/sysbuild/images/Display-prefix/src/Display-stamp/Display-update	95f521a5da57cb60
+46	60	1784979672601064777	_sysbuild/sysbuild/images/Display-prefix/src/Display-stamp/Display-patch	f8a21d3f49ebc0f0
+46	60	1784979672601064777	/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build/_sysbuild/sysbuild/images/Display-prefix/src/Display-stamp/Display-patch	f8a21d3f49ebc0f0
+60	75	1784979672615679909	_sysbuild/sysbuild/images/Display-prefix/src/Display-stamp/Display-configure	27d836a2ca4c47a4
+60	75	1784979672615679909	/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build/_sysbuild/sysbuild/images/Display-prefix/src/Display-stamp/Display-configure	27d836a2ca4c47a4
+75	3470	1784979672616424901	_sysbuild/sysbuild/images/Display-prefix/src/Display-stamp/Display-build	40c6a133b416ae72
+75	3470	1784979672616424901	/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build/_sysbuild/sysbuild/images/Display-prefix/src/Display-stamp/Display-build	40c6a133b416ae72
+3470	3481	1784979676011928061	_sysbuild/sysbuild/images/Display-prefix/src/Display-stamp/Display-install	fdae2f7632a03878
+3470	3481	1784979676011928061	/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build/_sysbuild/sysbuild/images/Display-prefix/src/Display-stamp/Display-install	fdae2f7632a03878
+3481	3501	1784979676042022734	_sysbuild/sysbuild/images/CMakeFiles/Display-complete	dd00c7f42ff4c7d9
+3481	3501	1784979676042022734	_sysbuild/sysbuild/images/Display-prefix/src/Display-stamp/Display-done	dd00c7f42ff4c7d9
+3481	3501	1784979676042022734	/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build/_sysbuild/sysbuild/images/CMakeFiles/Display-complete	dd00c7f42ff4c7d9
+3481	3501	1784979676042022734	/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build/_sysbuild/sysbuild/images/Display-prefix/src/Display-stamp/Display-done	dd00c7f42ff4c7d9

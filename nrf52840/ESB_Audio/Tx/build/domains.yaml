@@ -1,0 +1,7 @@
+default: Tx
+build_dir: /Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Tx/build
+domains:
+  - name: Tx
+    build_dir: /Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Tx/build/Tx
+flash_order:
+  - Tx

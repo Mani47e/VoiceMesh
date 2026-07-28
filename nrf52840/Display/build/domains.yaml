@@ -1,0 +1,7 @@
+default: Display
+build_dir: /Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build
+domains:
+  - name: Display
+    build_dir: /Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build/Display
+flash_order:
+  - Display

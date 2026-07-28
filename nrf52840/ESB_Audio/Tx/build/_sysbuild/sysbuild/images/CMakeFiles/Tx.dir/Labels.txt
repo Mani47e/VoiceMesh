@@ -1,0 +1,13 @@
+# Target labels
+ Tx
+# Source files and their labels
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Tx/build/_sysbuild/sysbuild/images/CMakeFiles/Tx
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Tx/build/_sysbuild/sysbuild/images/CMakeFiles/Tx.rule
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Tx/build/_sysbuild/sysbuild/images/CMakeFiles/Tx-complete.rule
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Tx/build/_sysbuild/sysbuild/images/Tx-prefix/src/Tx-stamp/Tx-build.rule
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Tx/build/_sysbuild/sysbuild/images/Tx-prefix/src/Tx-stamp/Tx-configure.rule
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Tx/build/_sysbuild/sysbuild/images/Tx-prefix/src/Tx-stamp/Tx-download.rule
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Tx/build/_sysbuild/sysbuild/images/Tx-prefix/src/Tx-stamp/Tx-install.rule
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Tx/build/_sysbuild/sysbuild/images/Tx-prefix/src/Tx-stamp/Tx-mkdir.rule
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Tx/build/_sysbuild/sysbuild/images/Tx-prefix/src/Tx-stamp/Tx-patch.rule
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/ESB_Audio/Tx/build/_sysbuild/sysbuild/images/Tx-prefix/src/Tx-stamp/Tx-update.rule

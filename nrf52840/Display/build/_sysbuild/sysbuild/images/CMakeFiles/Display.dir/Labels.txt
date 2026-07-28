@@ -1,0 +1,13 @@
+# Target labels
+ Display
+# Source files and their labels
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build/_sysbuild/sysbuild/images/CMakeFiles/Display
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build/_sysbuild/sysbuild/images/CMakeFiles/Display.rule
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build/_sysbuild/sysbuild/images/CMakeFiles/Display-complete.rule
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build/_sysbuild/sysbuild/images/Display-prefix/src/Display-stamp/Display-build.rule
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build/_sysbuild/sysbuild/images/Display-prefix/src/Display-stamp/Display-configure.rule
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build/_sysbuild/sysbuild/images/Display-prefix/src/Display-stamp/Display-download.rule
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build/_sysbuild/sysbuild/images/Display-prefix/src/Display-stamp/Display-install.rule
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build/_sysbuild/sysbuild/images/Display-prefix/src/Display-stamp/Display-mkdir.rule
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build/_sysbuild/sysbuild/images/Display-prefix/src/Display-stamp/Display-patch.rule
+/Users/mani/Documents/GitHub/VoiceMesh/nrf52840/Display/build/_sysbuild/sysbuild/images/Display-prefix/src/Display-stamp/Display-update.rule
