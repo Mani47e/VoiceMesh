@@ -3,7 +3,7 @@
 #include <zephyr/devicetree.h>
 #include <zephyr/drivers/i2s.h>
 #include <zephyr/drivers/display.h>
-#include <zephyr/display/cfb.h>
+// #include <zephyr/display/cfb.h>
 #include <zephyr/sys/printk.h>
 #include <string.h>
 #include <zephyr/drivers/gpio.h>
@@ -20,8 +20,8 @@
 #define MIC_GAIN 8   
 
 #define ESB_CHUNK_DATA_SIZE      128
-#define SAMPLES_PER_CHUNK        (ESB_CHUNK_DATA_SIZE / sizeof(int16_t))       /* 64 */
-#define CHUNKS_PER_BLOCK         (AUDIO_SAMPLES_PER_BLOCK / SAMPLES_PER_CHUNK) /* 8 */
+#define SAMPLES_PER_CHUNK        (ESB_CHUNK_DATA_SIZE / sizeof(int16_t))       //64
+#define CHUNKS_PER_BLOCK         (AUDIO_SAMPLES_PER_BLOCK / SAMPLES_PER_CHUNK) //8
 
 #define BUTTON_NODE DT_ALIAS(sw0)
 
@@ -34,7 +34,7 @@ struct chunk_hdr {
 
 //dt
 
-const struct device *dev = DEVICE_DT_GET(DT_NODELABEL(ssd1306));
+// const struct device *dev = DEVICE_DT_GET(DT_NODELABEL(ssd1306));
 
 const struct device *i2s_dev = DEVICE_DT_GET(DT_NODELABEL(i2s0));
 struct i2s_config rx_cfg;
@@ -59,20 +59,20 @@ static void print_debug(void)
     int64_t now = k_uptime_get();
     if (now - last < 2000) return;
     last = now;
-    printk("---------------------------------\n");
+ 
     printk("[MIC] peak(after gain)=%d\n", dbg_mic_peak);
     printk("[ESB] sent=%u failed=%u\n", dbg_esb_sent, dbg_esb_failed);
-    printk("---------------------------------\n");
+   
 
-   char line1[32], line2[32];
+//    char line1[32], line2[32];
 
-    snprintf(line1, sizeof(line1), "MIC peak=%d", dbg_mic_peak);
-    snprintf(line2, sizeof(line2), "ESB send=%ufailed=%u", dbg_esb_sent, dbg_esb_failed);
+//     snprintf(line1, sizeof(line1), "MIC peak=%d", dbg_mic_peak);
+//     snprintf(line2, sizeof(line2), "ESB send=%ufailed=%u", dbg_esb_sent, dbg_esb_failed);
 
-    cfb_framebuffer_clear(dev, true);
-    cfb_print(dev, line1, 0, 0);
-    cfb_print(dev, line2, 0, 16);   
-    cfb_framebuffer_finalize(dev);
+//     cfb_framebuffer_clear(dev, true);
+//     cfb_print(dev, line1, 0, 0);
+//     cfb_print(dev, line2, 0, 16);   
+//     cfb_framebuffer_finalize(dev);
     dbg_esb_sent = 0;
     dbg_esb_failed = 0;
     dbg_mic_peak = 0;
@@ -178,16 +178,16 @@ int main(void)
 
     //display initialize
 
-    if (!device_is_ready(dev)) {
-        printk("Display device not ready\n");
-    }
+    // if (!device_is_ready(dev)) {
+    //     printk("Display device not ready\n");
+    // }
 
-    if (cfb_framebuffer_init(dev)) {
-        printk("Framebuffer init failed\n");
-    }
+    // if (cfb_framebuffer_init(dev)) {
+    //     printk("Framebuffer init failed\n");
+    // }
 
-    cfb_framebuffer_clear(dev, true);
-    display_blanking_off(dev);
+    // cfb_framebuffer_clear(dev, true);
+    // display_blanking_off(dev);
 
     static bool was_talking = false;
     while (1) {

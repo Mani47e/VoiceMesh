@@ -23,14 +23,13 @@ struct chunk_hdr {
 
 const struct device *i2s_dev = DEVICE_DT_GET(DT_NODELABEL(i2s0));
 struct i2s_config tx_cfg;
-struct i2s_config rx_cfg; /* dummy RX, kept alive for I2S_DIR_BOTH -- matches your working loopback config */
+struct i2s_config rx_cfg; 
 
 K_MEM_SLAB_DEFINE(tx_mem_slab, AUDIO_BLOCK_SIZE, AUDIO_BLOCK_COUNT, 4);
 K_MEM_SLAB_DEFINE(rx_mem_slab, AUDIO_BLOCK_SIZE, AUDIO_BLOCK_COUNT, 4);
 
-/* ---- Ring buffer of raw sample bytes, same idea as the UDP reference:
- * ESB event handler pushes bytes as chunks arrive, playback pulls a
- * block's worth whenever ready, falling back to silence if starved. ---- */
+
+
 #define RING_SIZE 8000   /* bytes, ~0.5s at 8kHz/16-bit -- shrink for less latency */
 static uint8_t ring[RING_SIZE];
 static volatile int ring_head = 0;
@@ -195,11 +194,11 @@ static void print_debug(void)
     int64_t now = k_uptime_get();
     if (now - last < 2000) return;
     last = now;
-    printk("---------------------------------\n");
+   
     printk("[ESB]  recv=%u seq_gaps=%u\n", dbg_esb_recv, dbg_seq_gaps);
     printk("[RING] avail=%d drops=%u\n", ring_available(), dbg_ring_drops);
     printk("[PLAY] blocks=%u\n", dbg_play_blocks);
-    printk("---------------------------------\n");
+
     dbg_esb_recv = 0;
     dbg_seq_gaps = 0;
     dbg_ring_drops = 0;
@@ -243,8 +242,10 @@ int main(void)
             for (int i = 0; i < AUDIO_SAMPLES_PER_BLOCK; i++) {
                 int16_t sample;
                 uint8_t *sb = (uint8_t *)&sample;
-                sb[0] = ring[ring_tail]; ring_tail = (ring_tail + 1) % RING_SIZE;
-                sb[1] = ring[ring_tail]; ring_tail = (ring_tail + 1) % RING_SIZE;
+                sb[0] = ring[ring_tail]; 
+                ring_tail = (ring_tail + 1) % RING_SIZE;
+                sb[1] = ring[ring_tail]; 
+                ring_tail = (ring_tail + 1) % RING_SIZE;
                 out[i] = ((int32_t)sample) << 16;
             }
             dbg_play_blocks++;
