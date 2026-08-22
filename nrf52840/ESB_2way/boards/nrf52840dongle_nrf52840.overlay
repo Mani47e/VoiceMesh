@@ -16,7 +16,7 @@
 	pinctrl-names = "default";
 	};
 
-//Below are disabled since 2 of those pins are configured for them
+//Below are disabled since 2 of those pins are configured for i2s
 &uart0 {
 	status="disabled";
 };
