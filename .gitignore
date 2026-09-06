@@ -8,6 +8,9 @@
 **/CMakeFiles/
 CMakeCache.txt
 *.ninja
+*.ninja_deps
+*.ninja_log
+
 
 # ESP-IDF
 sdkconfig
@@ -28,3 +31,9 @@ venv/
 
 # macOS codec build test folder
 Codecs_test/Codec2_test/Codec2_build_macos/
+
+# Toolchain temporary outputs
+*.elf
+*.bin
+*.hex
+*.map
