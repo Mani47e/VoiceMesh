@@ -1,3 +1,30 @@
 # macOS metadata
 .DS_Store
 ._*
+
+# Zephyr / CMake / West build outputs
+**/build/
+**/build_*/
+**/CMakeFiles/
+CMakeCache.txt
+*.ninja
+
+# ESP-IDF
+sdkconfig
+sdkconfig.old
+dependencies.lock
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+
+# Audio / binary test recordings
+*.wav
+*.pcm
+*.raw
+
+# macOS codec build test folder
+Codecs_test/Codec2_test/Codec2_build_macos/
