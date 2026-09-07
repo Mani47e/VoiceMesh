@@ -30,15 +30,12 @@ static void on_esb_event(struct esb_evt const *event)
                         if (appstate_get() != DEV_STATE_LISTEN) {
                                 continue;
                         }
-                        if (rx_payload.length != CHUNK_PKT_SIZE) {
+                        if (rx_payload.length != NET_PACKET_SIZE) {
                                 continue;
                         }
 
-                        struct chunk_hdr hdr;
-                        memcpy(&hdr, rx_payload.data, sizeof(hdr));
-
                         if (rx_callback) {
-                                rx_callback(hdr.seq, rx_payload.data + sizeof(hdr), ESB_CHUNK_DATA_SIZE);
+                                rx_callback((const struct net_packet *)rx_payload.data);
                         }
                 }
                 break;
@@ -97,13 +94,10 @@ void transport_reset_tx_ready(void)
         tx_ready = true;
 }
 
-int transport_send_chunk(uint8_t seq, const uint8_t *data, size_t len)
+int transport_send_packet(const struct net_packet *pkt)
 {
-        struct chunk_hdr hdr = { .seq = seq, .reserved = 0 };
-
-        tx_payload.length = sizeof(hdr) + len;
-        memcpy(tx_payload.data, &hdr, sizeof(hdr));
-        memcpy(tx_payload.data + sizeof(hdr), data, len);
+        tx_payload.length = NET_PACKET_SIZE;
+        memcpy(tx_payload.data, pkt, NET_PACKET_SIZE);
 
         tx_ready = false;
         int err = esb_write_payload(&tx_payload);

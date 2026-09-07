@@ -2,7 +2,7 @@
 #include <zephyr/sys/printk.h>
 
 static atomic_t current_state = ATOMIC_INIT(DEV_STATE_LISTEN);
-K_SEM_DEFINE(threads_ready_sem, 0, 2);
+K_SEM_DEFINE(threads_ready_sem, 0, 3);
 
 static uint32_t dbg_esb_sent, dbg_esb_failed, dbg_esb_recv;
 static uint32_t dbg_ring_drops, dbg_play_blocks, dbg_seq_gaps;
@@ -33,6 +33,7 @@ void appstate_wait_threads_ready(void)
 
 void appstate_signal_threads_ready(void)
 {
+        k_sem_give(&threads_ready_sem);
         k_sem_give(&threads_ready_sem);
         k_sem_give(&threads_ready_sem);
 }

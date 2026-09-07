@@ -10,6 +10,7 @@ target_include_directories(app PRIVATE
     src/codec
     src/ringbuffer
     src/app
+    src/network
 )
 
 # List all source files
@@ -20,4 +21,5 @@ target_sources(app PRIVATE
     src/codec/codec.c
     src/ringbuffer/ringbuffer.c
     src/app/appstate.c
+    src/network/network.c
 )
