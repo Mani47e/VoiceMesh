@@ -18,7 +18,6 @@ void appstate_set(dev_state_t state);
 void appstate_wait_threads_ready(void);
 void appstate_signal_threads_ready(void);
 
-/* Metrics and Diagnostics */
 void appstate_inc_esb_sent(void);
 void appstate_inc_esb_failed(void);
 void appstate_inc_esb_recv(void);

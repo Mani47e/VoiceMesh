@@ -11,15 +11,15 @@
 #define AUDIO_SAMPLES_PER_BLOCK 512
 #define AUDIO_BLOCK_SIZE        (sizeof(int32_t) * AUDIO_SAMPLES_PER_BLOCK)
 
-int audio_init(void);
-int audio_start(void);
+int  audio_init(void);
+int  audio_start(void);
 void audio_preload_silence(void);
 
-int audio_read(void **buf, size_t *size);
+int  audio_read(void **buf, size_t *size);
 void audio_free_rx(void *buf);
 
-int audio_alloc_tx(void **buf);
-int audio_write(void *buf, size_t size);
+int  audio_alloc_tx(void **buf);
+int  audio_write(void *buf, size_t size);
 void audio_free_tx(void *buf);
 
 #endif /* AUDIO_H */

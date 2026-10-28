@@ -2,9 +2,8 @@
 #define TRANSPORT_H
 
 #include <stdint.h>
-#include <stddef.h>
 #include <stdbool.h>
-#include "network/network.h"
+#include "network.h"
 
 typedef void (*transport_rx_callback_t)(const struct net_packet *pkt);
 

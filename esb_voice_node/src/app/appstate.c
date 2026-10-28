@@ -16,15 +16,8 @@ void appstate_init(void)
         have_last_seq = false;
 }
 
-dev_state_t appstate_get(void)
-{
-        return (dev_state_t)atomic_get(&current_state);
-}
-
-void appstate_set(dev_state_t state)
-{
-        atomic_set(&current_state, state);
-}
+dev_state_t appstate_get(void)       { return (dev_state_t)atomic_get(&current_state); }
+void appstate_set(dev_state_t state) { atomic_set(&current_state, state); }
 
 void appstate_wait_threads_ready(void)
 {
@@ -33,9 +26,9 @@ void appstate_wait_threads_ready(void)
 
 void appstate_signal_threads_ready(void)
 {
-        k_sem_give(&threads_ready_sem);
-        k_sem_give(&threads_ready_sem);
-        k_sem_give(&threads_ready_sem);
+        k_sem_give(&threads_ready_sem); /* Capture thread */
+        k_sem_give(&threads_ready_sem); /* Playback thread */
+        k_sem_give(&threads_ready_sem); /* Relay thread */
 }
 
 void appstate_inc_esb_sent(void)    { dbg_esb_sent++; }
@@ -47,9 +40,7 @@ void appstate_inc_play_blocks(void) { dbg_play_blocks++; }
 
 void appstate_set_mic_peak(int32_t peak)
 {
-        if (peak > dbg_mic_peak) {
-                dbg_mic_peak = peak;
-        }
+        if (peak > dbg_mic_peak) dbg_mic_peak = peak;
 }
 
 void appstate_verify_seq(uint8_t seq)
@@ -62,18 +53,13 @@ void appstate_verify_seq(uint8_t seq)
         dbg_esb_recv++;
 }
 
-void appstate_reset_seq_tracking(void)
-{
-        have_last_seq = false;
-}
+void appstate_reset_seq_tracking(void) { have_last_seq = false; }
 
 void appstate_print_debug(int ring_available_bytes)
 {
         static int64_t last;
         int64_t now = k_uptime_get();
-        if (now - last < 2000) {
-                return;
-        }
+        if (now - last < 2000) return;
         last = now;
 
         if (appstate_get() == DEV_STATE_TALK) {

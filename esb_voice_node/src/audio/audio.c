@@ -30,10 +30,7 @@ int audio_init(void)
         tx_cfg.timeout = SYS_FOREVER_MS;
 
         int ret = i2s_configure(i2s_dev, I2S_DIR_TX, &tx_cfg);
-        if (ret) {
-                printk("I2S TX configure failed: %d\n", ret);
-                return ret;
-        }
+        if (ret) return ret;
 
         rx_cfg.word_size = AUDIO_WORD_SIZE;
         rx_cfg.channels = 1;
@@ -44,13 +41,7 @@ int audio_init(void)
         rx_cfg.block_size = AUDIO_BLOCK_SIZE;
         rx_cfg.timeout = SYS_FOREVER_MS;
 
-        ret = i2s_configure(i2s_dev, I2S_DIR_RX, &rx_cfg);
-        if (ret) {
-                printk("I2S RX configure failed: %d\n", ret);
-                return ret;
-        }
-
-        return 0;
+        return i2s_configure(i2s_dev, I2S_DIR_RX, &rx_cfg);
 }
 
 int audio_start(void)
@@ -68,27 +59,8 @@ void audio_preload_silence(void)
         }
 }
 
-int audio_read(void **buf, size_t *size)
-{
-        return i2s_read(i2s_dev, buf, size);
-}
-
-void audio_free_rx(void *buf)
-{
-        k_mem_slab_free(&rx_mem_slab, buf);
-}
-
-int audio_alloc_tx(void **buf)
-{
-        return k_mem_slab_alloc(&tx_mem_slab, buf, K_FOREVER);
-}
-
-int audio_write(void *buf, size_t size)
-{
-        return i2s_write(i2s_dev, buf, size);
-}
-
-void audio_free_tx(void *buf)
-{
-        k_mem_slab_free(&tx_mem_slab, buf);
-}
+int  audio_read(void **buf, size_t *size) { return i2s_read(i2s_dev, buf, size); }
+void audio_free_rx(void *buf)             { k_mem_slab_free(&rx_mem_slab, buf); }
+int  audio_alloc_tx(void **buf)           { return k_mem_slab_alloc(&tx_mem_slab, buf, K_FOREVER); }
+int  audio_write(void *buf, size_t size)  { return i2s_write(i2s_dev, buf, size); }
+void audio_free_tx(void *buf)             { k_mem_slab_free(&tx_mem_slab, buf); }

@@ -6,13 +6,14 @@
 #include <stddef.h>
 
 #define NET_AUDIO_PAYLOAD_SIZE 128
-#define DEFAULT_TTL            2
+#define BROADCAST_NODE_ID      0xFF
 
 struct net_hdr {
-        uint8_t  src_id;       /* Origin node ID */
-        uint8_t  last_hop_id;  /* Node ID that broadcasted this hop */
-        uint8_t  ttl;          /* Hops remaining */
-        uint16_t seq;          /* Sequence counter from source */
+        uint8_t  src_id;       /* Originator node ID */
+        uint8_t  dest_id;      /* Destination node ID (or 0xFF) */
+        uint8_t  last_hop_id;  /* ID of the node that sent this hop */
+        uint8_t  ttl;          /* Remaining hops allowed */
+        uint16_t seq;          /* Unique packet sequence number */
 } __attribute__((packed));
 
 struct net_packet {
@@ -26,5 +27,3 @@ void network_init(void);
 bool network_is_duplicate(uint8_t src_id, uint16_t seq);
 
 #endif /* NETWORK_H */
-
-

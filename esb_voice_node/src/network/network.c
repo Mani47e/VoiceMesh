@@ -23,11 +23,10 @@ bool network_is_duplicate(uint8_t src_id, uint16_t seq)
 {
         for (int i = 0; i < DEDUP_HISTORY_SIZE; i++) {
                 if (history[i].src_id == src_id && history[i].seq == seq) {
-                        return true; /* Already handled */
+                        return true; /* Drop duplicate */
                 }
         }
 
-        /* Record new packet */
         history[history_idx].src_id = src_id;
         history[history_idx].seq = seq;
         history_idx = (history_idx + 1) % DEDUP_HISTORY_SIZE;

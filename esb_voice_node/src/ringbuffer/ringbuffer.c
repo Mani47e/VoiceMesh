@@ -4,16 +4,8 @@ static uint8_t ring[RING_SIZE];
 static volatile int ring_head = 0;
 static volatile int ring_tail = 0;
 
-void ring_init(void)
-{
-        ring_reset();
-}
-
-void ring_reset(void)
-{
-        ring_head = 0;
-        ring_tail = 0;
-}
+void ring_init(void)  { ring_reset(); }
+void ring_reset(void) { ring_head = 0; ring_tail = 0; }
 
 int ring_available(void)
 {
@@ -28,13 +20,13 @@ bool ring_push(uint8_t b)
                 ring_head = next;
                 return true;
         }
-        return false; /* Ring full */
+        return false;
 }
 
 bool ring_pop(uint8_t *b)
 {
         if (ring_head == ring_tail) {
-                return false; /* Ring empty */
+                return false;
         }
         *b = ring[ring_tail];
         ring_tail = (ring_tail + 1) % RING_SIZE;

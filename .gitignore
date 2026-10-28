@@ -11,6 +11,32 @@ CMakeCache.txt
 *.ninja_deps
 *.ninja_log
 
+# Contiki / Contiki-NG build outputs
+obj_*/
+**/obj_*/
+symbols.c
+symbols.h
+Makefile.target
+Makefile.*.target
+*.nrf52840
+*.nrf
+*.native
+*.cooja
+*.sky
+*.z1
+*.zoul
+*.dongle
+*-dfu-image.zip
+*.co
+*.ce
+*.srec
+*.ihex
+*.ihx
+*.testlog
+*.log.prog
+*.faillog
+*.runlog
+*.cooja.log
 
 # ESP-IDF
 sdkconfig
@@ -37,3 +63,10 @@ Codecs_test/Codec2_test/Codec2_build_macos/
 *.bin
 *.hex
 *.map
+*.o
+*.d
+*.a
+
+# IDE / Editor files
+/.vscode/
+.idea/
